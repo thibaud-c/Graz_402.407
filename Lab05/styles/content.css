@@ -1,0 +1,37 @@
+.content {
+  padding-top: 2vh;
+  display: flex;
+  justify-content: center;
+}
+#my-map {
+  max-width: 30%;
+  height: auto;
+  object-fit: cover;
+}
+section p {
+  width: 50vw;
+}
+#btn-container {
+  width: 100%;
+  text-align: center;
+}
+.gradient-button {
+  font-size: 1.5em;
+  color: rgb (0, 225, 255);
+  position: relative;
+  background: linear-gradient(to right, #3b82f6, #8b5cf6);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  width: 100px;
+  cursor: wait;
+  transition: all 0.3s ease;
+}
+.gradient-button:hover {
+  background: linear-gradient(to left, #3b82f6, #8b5cf6);
+  box-shadow: 0 10px 15px •rgba(0, 0, 0, 0.2);
+  transform: scale(1.05);
+}
+.gradient-button:active {
+  transform: scale(0.95);
+}
