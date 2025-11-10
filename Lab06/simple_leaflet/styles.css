@@ -1,0 +1,29 @@
+/* Ensure the page and map can size properly */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: system-ui, Arial, sans-serif;
+}
+
+/* Critical: give the map a height or it won't appear */
+#map {
+    height: 1000px;
+    width: 100%;
+    border: 2px solid #2c3e50;
+    box-sizing: border-box;
+}
+
+/* Simple button styling */
+#zoom-graz {
+    margin: 10px;
+    padding: 8px 14px;
+    background: #2c7fb8;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#zoom-graz:hover {
+    background: #2166ac;
+}
