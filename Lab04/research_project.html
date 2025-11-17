@@ -1,28 +1,31 @@
-<! DOCTYPE html>
-<html>
-  <head>
-    <title>Rocket Crossing</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
-  </head>
-  <body>
-    <center>
-      <h1>My research project</h1>
-      <div id="rocketContainer">
-        <img
-          id="rocket"
-          height="300px"
-          src="https://iheartcraftythings.com/wp-content/uploads/2021/05/Rocket-DRAWING-%E2%80%93-STEP-10.jpg"
-        />
-      </div>
-      <br />
-      <div id="inputContainer">
-        <label for="speedInput">Enter speed (in pixels/second):</label>
-        <input type="number" id="speedInput" min="1" />
-        <button id="startButton" onclick="alert('Launched!'); startRocket()">
-          Start
-        </button>
-      </div>
-    </center>
-    <script src="script.js"></script>
-  </body>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Basic CSS Example</title>
+  <style>
+    #map {
+      /* Set width to 600 pixels */
+      width: 600px;
+      /* Set height to 400 pixels */
+      height: 400px;
+      /* Light blue background color */
+      background-color: lightblue;
+      /* Solid black border with 2px thickness */
+      border: 2px solid black;
+      /* Margin on top/bottom 20px, auto for horizontal centering */
+      margin: 20px auto;
+      /* Relative positioning for internal absolute positioning */
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>My Web Map</h1>
+  <p>This is a simple map container styled with CSS properties.</p>
+  <div id="map"></div>
+</body>
+
 </html>
