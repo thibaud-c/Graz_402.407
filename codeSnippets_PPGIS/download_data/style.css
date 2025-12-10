@@ -1,0 +1,27 @@
+body, html { margin: 0; height: 100%; overflow: hidden; }
+#map { height: 50%; width: 50%; margin: auto}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-export{
+  color: #ff0000;
+  font-weight: bold;
+  width: 80%;
+  height: 50px;
+}
+
+.survey-inputs {
+    padding: 20px;
+    width: 30%;
+    margin: auto;
+}
+
+#genderInput {
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 20px;
+}

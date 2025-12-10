@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <!-- create a crosshair in the center of the map -->
+    <div id="crosshair"> + </div>
+
+    <!-- Button to collect data -->
+    <div id="controls">
+        <button class="btn-vote" onclick="openModal('like')">👍</button>
+        <button class="btn-vote" onclick="openModal('dislike')">👎</button>
+    </div>
+
+    <!-- create a modal to collect coomments -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <h3>Comment</h3>
+            <p id="voteTypeDisplay"></p> <!-- Will say "You liked this place" -->
+            <textarea id="userComment" placeholder="What is your comment?" rows="4"></textarea>
+            <br>
+            <button onclick="saveData()">Save Point</button>
+            <button onclick="closeModal()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+[
+    {
+        "lat": 48.2082,
+        "lng": 16.3738,
+        "sentiment": "like",
+        "comment": "St. Stephen's Cathedral is beautiful at night."
+    },
+    {
+        "lat": 48.2100,
+        "lng": 16.3634,
+        "sentiment": "dislike",
+        "comment": "Too much traffic and noise here."
+    },
+    {
+        "lat": 48.1987,
+        "lng": 16.3688,
+        "sentiment": "like",
+        "comment": "Great coffee shop near the Karlskirche."
+    }
+]
