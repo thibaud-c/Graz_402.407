@@ -37,7 +37,7 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './codeSnippets_PPGIS/add_markers'
+          path: './codeSnippets_PPGIS/download_data'
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
