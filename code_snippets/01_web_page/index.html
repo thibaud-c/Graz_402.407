@@ -1,0 +1,27 @@
+<!doctype html>
+<!-- lang tells assistive technology the language of the page. -->
+<html lang="en">
+<head>
+  <!-- UTF-8 supports accents. The viewport lets the layout adapt to phone screens. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A walk in Graz</title>
+  <!-- Relative paths load our stylesheet and script beside this HTML file. -->
+  <link rel="stylesheet" href="style.css">
+  <!-- defer waits for HTML parsing; deferred classic scripts run in document order. -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><h1>A walk in Graz</h1></header>
+  <!-- Semantic elements describe content, while classes/IDs connect it to CSS and JS. -->
+  <main>
+    <h2>What could we observe?</h2>
+    <p>A walk can help us ask how people use public space. This page counts example stops, not real observations.</p>
+    <!-- A button describes an action. app.js finds this ID and attaches its click handler. -->
+    <button id="count-button" type="button">Record an example stop</button>
+    <p id="count" role="status">Recorded stops: 0</p>
+    <p><a href="https://www.graz.at/">City of Graz</a></p>
+  </main>
+  <footer><p>Teaching example for Graz 402.407. Adapt the question and content for your project.</p></footer>
+</body>
+</html>

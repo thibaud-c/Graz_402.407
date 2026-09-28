@@ -1,0 +1,39 @@
+/* The declared width includes padding and borders, making layout easier to predict. */
+*, *::before, *::after { box-sizing: border-box; }
+
+/* These text styles inherit into most children. Limit line length on wide screens. */
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #172a35;
+  background: #f5f7f8;
+  margin: auto; /* Centre the page when it is narrower than the browser. */
+  padding: 1rem; /* Keep content away from the edges on a phone. */
+  max-width: 70rem;
+}
+/* A comma applies one rule to several selectors. */
+h1, h2 { line-height: 1.2; }
+a { color: #005a8d; }
+
+/* Form controls do not always inherit the surrounding font by default. */
+button, input, select, textarea { font: inherit; }
+button { padding: 0.5rem 0.8rem; cursor: pointer; }
+/* A pseudo-class matches a state, here a temporarily unavailable button. */
+button:disabled { cursor: wait; }
+label { display: block; margin-top: 0.7rem; }
+/* Attribute selectors distinguish checkbox inputs from text/number inputs. */
+input:not([type="checkbox"]), select, textarea {
+  display: block;
+  max-width: 100%;
+  padding: 0.4rem;
+}
+/* Visible keyboard focus helps visitors see which control will respond to Enter. */
+:focus-visible { outline: 3px solid #8a3500; outline-offset: 3px; }
+
+/* An ID selector matches one map container. Leaflet needs it to have a height.
+   vh is a percentage of viewport height; rem follows the root font size. */
+#map { height: 60vh; min-height: 20rem; margin-block: 1rem; }
+/* Reserve a line for feedback so a short message does not shift everything below it. */
+#status { min-height: 1.6em; }
+li { margin-bottom: 0.5rem; }
+img { max-width: 100%; }
