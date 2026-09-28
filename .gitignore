@@ -1,0 +1,5 @@
+.DS_Store
+Thumbs.db
+# Keep field responses in a private folder outside this repository.
+participant_data_*.geojson
+responses/
