@@ -2,7 +2,7 @@
 
 [HTML tutorial](../../tutorials/html.md) · [Snippet index](../README.md)
 
-Adapted from Lab 04. Paste this inside the `main` element of your copied `index.html`. It is a fragment, not a separate complete HTML document.
+Paste this inside the `main` element of your `index.html`. It is a fragment, not a separate complete HTML document.
 
 ```html
 <!-- A heading groups the paragraph and source into one meaningful section. -->
