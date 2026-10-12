@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Whose Graz appears?</title>
+  <!-- Leaflet draws the map. Our own files still use ordinary HTML, CSS and JS. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header>
+    <p class="course">402.407 · Digital geographies playground</p>
+    <!-- TRY HTML: change this title and the explanation. Whose account do they convey? -->
+    <h1>Whose Graz appears?</h1>
+    <p class="intro">A map shows choices. Change which records appear, then ask what you can and cannot conclude.</p>
+    <p class="notice">Six invented observations near Graz. These are practice data, not evidence about actual places or people.</p>
+  </header>
+  <main>
+    <!-- Each label's for matches a control ID. The option values must match app.js. -->
+    <form id="controls" aria-label="Change the map">
+      <div>
+        <label for="group">Contributor group</label>
+        <select id="group">
+          <option value="all">All demo contributors</option>
+          <option value="Campus group">Campus group only</option>
+          <option value="Neighbourhood group">Neighbourhood group only</option>
+        </select>
+      </div>
+      <div>
+        <label for="category">Observation category</label>
+        <select id="category">
+          <option value="all">All categories</option>
+          <option value="seating">Seating</option>
+          <option value="shade">Shade</option>
+          <option value="quiet">Quiet</option>
+        </select>
+      </div>
+      <label class="check"><input id="names" type="checkbox"> Show map labels</label>
+      <label class="check"><input id="basemap" type="checkbox" checked> Show basemap</label>
+      <!-- An ID of "reset" would hide the form's reset() method. Use a distinct ID. -->
+      <button id="reset-experiment" type="button">Reset experiment</button>
+    </form>
+    <!-- JS changes this text. role=status announces updates to screen readers. -->
+    <p id="status" role="status"></p>
+    <div class="workspace">
+      <section aria-labelledby="map-title">
+        <h2 id="map-title">One view of the city</h2>
+        <!-- CSS gives Leaflet an explicit height. The list provides a text alternative. -->
+        <div id="map" aria-label="Map of invented observations near Graz"></div>
+        <p id="map-message" class="small" role="status">Leaflet and basemap images load from external services. The observations are in app.js.</p>
+      </section>
+      <section aria-labelledby="list-title">
+        <h2 id="list-title">Visible observations</h2>
+        <p class="small">Select a stop to move the map and open its note.</p>
+        <ul id="places"></ul>
+      </section>
+    </div>
+    <section class="reflection" aria-labelledby="reflection-title">
+      <h2 id="reflection-title">What changed geographically?</h2>
+      <div class="questions">
+        <article><h3>Through the digital</h3><p>What knowledge could you produce with this map? What would an empty area allow you to conclude?</p></article>
+        <article><h3>By the digital</h3><p>How might a default filter, label or map view influence attention or action? Separate an observed change from a possible effect.</p></article>
+        <article><h3>Of the digital</h3><p>Which devices, connections, services and skills make this page possible? Who might have difficulty using it?</p></article>
+      </div>
+    </section>
+    <details>
+      <summary>Try changing the code</summary>
+      <ol>
+        <li>In <strong>index.html</strong>, change the heading and explain your new question.</li>
+        <li>In <strong>style.css</strong>, change the emphasis of the observation cards. Compare on a phone-sized window.</li>
+        <li>In <strong>app.js</strong>, change one record's category. Predict the result of filtering before reloading.</li>
+      </ol>
+      <p>See README.md for the staged worksheet. Change one thing, save, reload and explain what happened.</p>
+    </details>
+  </main>
+  <footer>
+    <p>Basemap © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>. Mapping library: <a href="https://leafletjs.com/">Leaflet</a>. Observations: invented for this exercise.</p>
+    <p>Discussion framework: <a href="https://kitchin.org/wp-content/uploads/2019/04/PIHG-digital-geog-2018.pdf">Ash, Kitchin and Leszczynski, 2018</a>. This page is a teaching example, not a project submission.</p>
+  </footer>
+</body>
+</html>

@@ -2,10 +2,11 @@
 
 [Back to the course](../README.md)
 
-Start with the course README to clone the repository. Then work through these guides in order. Each ends with a small exercise and a way to check the result. The times are estimates for practice, not a timetable.
+Start with the course README to clone the repository. Read GIS 101 for the geographic foundations, then work through the web development guides in order. Each ends with a small exercise and a way to check the result. The times are estimates for practice, not a timetable.
 
 | Order | Guide | What you will do | Time |
 | --- | --- | --- | --- |
+| 0 | [GIS 101](gis_101.md) | Understand geometry, attributes, vector/raster, analysis, QGIS/ArcGIS, and CRS; make a buffer | 90 min |
 | 1 | [VS Code](vscode.md) | Edit files and preview a page with Live Server | 25 min |
 | 2 | [Terminal and paths](cli.md) | Find files and navigate folders | 25 min |
 | 3 | [Git and GitHub](git.md) | Commit, receive updates, resolve a conflict, share group work | 50 min |
@@ -25,6 +26,7 @@ Start with the course README to clone the repository. Then work through these gu
 
 | Place | What belongs there |
 | --- | --- |
+| QGIS or ArcGIS Pro | Inspect layers and attributes, choose coordinate systems, and run GIS tools |
 | VS Code editor | HTML, CSS, JavaScript, Markdown, GeoJSON |
 | PowerShell or Terminal | `cd`, `git`, and other shell commands |
 | Browser Console in developer tools | JavaScript experiments and error messages |
@@ -37,6 +39,6 @@ The browser requests files from a server, reads HTML, applies CSS, and runs Java
 
 ## How to practise
 
-Create `practice/learning_log.md` in the first guide. Predict each result, make one change, save, and test it. Record the result and one question. The [snippets](../code_snippets/README.md) are runnable reference examples. Copy the whole folder into `practice` so class updates do not overwrite your experiments.
+The GIS 101 exercise uses QGIS and keeps its outputs in `practice/gis_101`. The web development guides use VS Code and a browser. Create `practice/learning_log.md` in the VS Code guide. Predict each result, make one change, save, and test it. Record the result and one question. The [snippets](../code_snippets/README.md) are runnable reference examples. Copy the whole folder into `practice` so class updates do not overwrite your experiments.
 
 The small local observation examples are invented for teaching. The polygon snippet includes a dated OpenStreetMap export with its original source metadata. Real API data changes over time. A working map still needs a geographic question, a source, and an explanation of its limitations.

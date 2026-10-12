@@ -68,6 +68,9 @@ If Git reports a conflict, follow the [conflict walkthrough](tutorials/git.md#5-
 
 ## Find the materials
 
+- [Lab 01](lab_01/README.md): inspect websites together, then read and edit a small HTML page, try tags, and load a local image.
+- [Lab 02](lab_02/README.md): use CSS to change emphasis, colour, spacing, and width while discussing uneven digital geographies.
+- [GIS 101](tutorials/gis_101.md): spatial data, vector and raster, basic analysis, QGIS and ArcGIS tools, and coordinate systems, with a QGIS practice exercise.
 - [Tutorials](tutorials/README.md): a suggested order, short reference tables, guided examples, and a small exercise at the end of each guide.
 - [Code snippets](code_snippets/README.md): standalone starting points for class exercises and projects. Copy a whole example folder before editing it.
 - [Group contract](templates/group_contract.md): agree on responsibilities, communication, and review before either project.
@@ -78,6 +81,18 @@ Create a `practice` folder for your experiments. In the second group project, yo
 ## Resources for learning and exploring
 
 Use these alongside the tutorials. Start with one beginner resource and try its examples. Research papers are for discussion; read the abstract and introduction first, then choose a section relevant to your question. Some publisher versions require university access; institutional repositories may offer an accepted manuscript.
+
+### GIS fundamentals and desktop software
+
+| Resource | Format and level | What to use it for |
+| --- | --- | --- |
+| [Course GIS 101 tutorial](tutorials/gis_101.md) | Guide and exercise; beginner | Learn how geometry, attributes, raster/vector, analysis, and coordinate systems fit together. Its reference section links to individual tool documentation. |
+| [Learn GIS - QGIS Full Course for Beginners, Matt Forrest](https://youtu.be/SovdBaus7pM?si=94JIfXxNEH2geKts) | Video walkthrough; beginner | Pause to practise in QGIS and compare the interface with your installed version. |
+| [QGIS: a gentle introduction to GIS](https://docs.qgis.org/3.44/en/docs/gentle_gis_introduction/index.html) | Illustrated explanations; beginner | Read about spatial data, map production, CRS, and buffers. |
+| [QGIS training manual](https://docs.qgis.org/3.44/en/docs/training_manual/index.html) | Practical course; beginner to intermediate | Practise loading data, working with attributes, styling layers, and analysis. |
+| [QGIS Processing Toolbox](https://docs.qgis.org/3.44/en/docs/user_manual/processing/toolbox.html) | Official documentation; reference | Learn how to find tools, read their parameters, and save results. |
+| [ArcGIS Pro: use geoprocessing tools](https://doc.esri.com/en/arcgis-pro/latest/get-started/use-geoprocessing-tools.html) | Official walkthrough; beginner | Compare a desktop GIS workflow using the Geoprocessing pane and toolboxes. |
+| [ArcGIS Pro: coordinate systems and projections](https://doc.esri.com/en/arcgis-pro/latest/help/mapping/properties/coordinate-systems-and-projections.html) | Official explanation; reference | Check the difference between geographic coordinates, projected coordinates, and transformations. |
 
 ### HTML, CSS, and JavaScript
 

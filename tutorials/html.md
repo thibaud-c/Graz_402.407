@@ -94,6 +94,14 @@ A page about a neighbourhood makes choices about whose descriptions appear first
 
 Read [W3C's page-structure guide](https://www.w3.org/WAI/tutorials/page-structure/) alongside the [digital-geographies introduction](https://eprints.ncl.ac.uk/223990). Apply the question to your page: whose account of this place is visible, and who might have difficulty reaching it? Accessibility supports access, but it does not by itself make the account representative.
 
+## Documentation and video to keep nearby
+
+| Resource | Content |
+| --- | --- |
+| [w3 school's HTML Tutorial](https://www.w3schools.com/html/default.asp) | Reference for HTML elements and attributes. There is also small quizzes that can help you to practice. |
+| [web.dev Learn HTML](https://web.dev/learn/html) | In-depth articles that explain the basics of HTML. |
+| [HTML Tutorial for Beginners: HTML Crash Course; Programming with Mosh](https://youtu.be/qz0aGYrrlhU?si=Q4UJTXGgy2ETK1Oo) | Fundamental concepts of web development with HTML. |
+
 ## Exercise: describe a place
 
 Turn your page into a short field observation with one main heading, two sections, a list, a source link, and the labelled input. Add an image only if you have permission to use it. Preview it and press Tab repeatedly.
