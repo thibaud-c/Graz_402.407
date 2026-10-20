@@ -1,0 +1,106 @@
+/* Include padding and borders in the declared width so boxes fit the page. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: #243746;
+  background-color: #f4f6f8;
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+h1 {
+  color: #204f70;
+}
+
+/* A comma shares one rule across several heading types. */
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+/* Both accounts match this shared class. */
+.account {
+  background-color: white;
+  border: 1px solid #697a86;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+/* This deliberately gives the first account more visual prominence. */
+.featured {
+  background-color: #fff2cc;
+  border-left: 6px solid #8a3500;
+}
+
+#question {
+  color: #204f70;
+  font-style: italic;
+  text-align: center;
+}
+
+.note {
+  font-size: 0.95rem;
+  color: #697a86;
+}
+
+a {
+  color: #8d1300;
+}
+
+/* Pointer and keyboard users both receive feedback on the source links. */
+a:hover, a:focus-visible {
+  text-decoration-thickness: 3px;
+}
+
+/* Keep the current link visible to someone navigating with the keyboard. */
+:focus-visible {
+  outline: 3px solid #8a3500;
+  outline-offset: 3px;
+}
+
+/* Start with one column so a small screen keeps a sensible reading order. */
+.layout {
+  display: grid;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.side-panel {
+  background-color: white;
+  border: 1px solid #697a86;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 8px #0000001a;
+}
+
+/* Remove figure's default outer margin so the photo fills the panel's content. */
+.side-panel figure {
+  margin: 0;
+}
+
+/* A space matches images inside the panel. cover crops without stretching. */
+.side-panel img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 0.4rem;
+}
+
+figcaption {
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+/* At 48rem and wider, share space in a 2:1 ratio; allow both columns to shrink. */
+@media (min-width: 48rem) {
+  .layout {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+}

@@ -69,7 +69,8 @@ If Git reports a conflict, follow the [conflict walkthrough](tutorials/git.md#5-
 ## Find the materials
 
 - [Lab 01](lab_01/README.md): inspect websites together, then read and edit a small HTML page, try tags, and load a local image.
-- [Lab 02](lab_02/README.md): use CSS to change emphasis, colour, spacing, and width while discussing uneven digital geographies.
+- [Lab 02](lab_02/README.md): use CSS to change emphasis, colour, spacing, image cropping, and a responsive side panel while discussing uneven digital geographies.
+- [Lab 03](lab_03/README.md): predict and enable styles one at a time, connect a first JavaScript button, and optionally add a Leaflet map while discussing datafication.
 - [GIS 101](tutorials/gis_101.md): spatial data, vector and raster, basic analysis, QGIS and ArcGIS tools, and coordinate systems, with a QGIS practice exercise.
 - [Tutorials](tutorials/README.md): a suggested order, short reference tables, guided examples, and a small exercise at the end of each guide.
 - [Code snippets](code_snippets/README.md): standalone starting points for class exercises and projects. Copy a whole example folder before editing it.

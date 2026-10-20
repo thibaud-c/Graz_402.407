@@ -6,7 +6,7 @@ You do not need to know HTML yet. Try to make a prediction, change one thing, sa
 
 The example introduces **digital mediation**: how digital maps influence our understanding and experience of places. Its definition, examples, and link give us something geographical to discuss while we explore the HTML.
 
-## Look behind a website (done in-class)
+## In class: look behind a website
 
 Open a website and its browser **developer tools**. These panels belong to the browser. The browser Console is different from the terminal used for commands such as `cd`.
 
