@@ -1,0 +1,27 @@
+/* STEP 1. These rules affect presentation, not the words stored in index.html. */
+* { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f6f8;
+  color: #243746;
+  max-width: 64rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* heading.css contains another h1 rule. Compare their order in the HTML head. */
+h1 { color: #204f70; }
+h1, h2, h3 { line-height: 1.2; }
+a { color: #005a73; }
+
+button {
+  font: inherit;
+  padding: 0.5rem 0.8rem;
+  cursor: pointer;
+}
+button:disabled { cursor: default; }
+
+/* Keep keyboard focus visible, including after the other files are enabled. */
+:focus-visible { outline: 3px solid #8a3500; outline-offset: 3px; }

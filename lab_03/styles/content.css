@@ -1,0 +1,32 @@
+/* STEP 3. The same HTML articles can appear stacked or side by side. */
+.comparison {
+  display: grid;
+  gap: 1rem;
+  align-items: start;
+}
+.card {
+  min-width: 0;
+  background-color: white;
+  border: 1px solid #697a86;
+  border-radius: 0.4rem;
+  padding: 1rem;
+}
+.card h3 { margin-top: 0; }
+.note { font-size: 0.9rem; }
+.record {
+  min-height: 4rem;
+  padding: 0.8rem;
+  border-left: 4px solid #8a5a00;
+  background-color: #fff2cc;
+}
+
+/* STEP 4 adds this class with JavaScript. Until then this selector matches nothing. */
+.recorded {
+  background-color: #e0f1e6;
+  border-left-color: #27634d;
+  font-weight: 600;
+}
+
+@media (min-width: 48rem) {
+  .comparison { grid-template-columns: 1fr 1fr; }
+}

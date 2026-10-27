@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Datafication: when a place becomes a record</title>
+
+  <!-- CLASS START: comment out all five steps to read the plain HTML page first.
+       For each step: predict, remove ONLY its comment markers, save and reload.
+       Keep previously enabled steps on. Do not uncomment the whole head. -->
+
+  <!-- STEP 1: page colours, type and spacing. What will remain unchanged? -->
+  <!-- <link rel="stylesheet" href="styles/default.css"> -->
+
+  <!-- STEP 2: header and navigation. Which h1 colour will win, and why? -->
+  <!-- <link rel="stylesheet" href="styles/heading.css"> -->
+
+  <!-- STEP 3: compare the account and record side by side on wide screens. -->
+  <!-- <link rel="stylesheet" href="styles/content.css"> -->
+
+  <!-- STEP 4: connect our first JavaScript file. defer waits for the HTML.
+       Predict the message and button state before you click anything. -->
+  <!-- <script src="scripts/app.js" defer></script> -->
+
+  <!-- STEP 5, OPTIONAL: enable ALL FOUR lines below together.
+       Leaflet's CSS styles the map; map.css gives it a height.
+       The library must load before scripts/map.js. Keep defer on both scripts.
+       This extension needs internet access. The earlier steps do not. -->
+  <!--
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="styles/map.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="scripts/map.js" defer></script>
+  -->
+</head>
+<body>
+  <!-- Changing the tab title above does not change this heading. -->
+  <header>
+    <p>Lab 03 · HTML + CSS + JavaScript</p>
+    <h1>Datafication</h1>
+    <p>When an experience of a place becomes a data record.</p>
+  </header>
+
+  <!-- These real destinations work even before CSS and JavaScript are enabled. -->
+  <nav aria-label="On this page">
+    <ul>
+      <li><a href="#concept">The concept</a></li>
+      <li><a href="#experiment">The experiment</a></li>
+      <li><a href="#map-section">Optional map</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="concept">
+      <h2>What does it mean?</h2>
+      <p><strong>Datafication</strong> means turning aspects of activities, experiences or places into data that software can store, sort or compare. A description of a favourite resting place might become a location, a category and a time.</p>
+      <p>This makes it easier to compare records and put them on a map. It also involves choices. Which categories are available? What details do they leave out? A point labelled <em>shade</em> is a limited account of a place, not the whole experience of being there.</p>
+    </section>
+
+    <section id="experiment">
+      <h2>Try an example</h2>
+      <p class="note">The account and record below are made up for this lab.</p>
+
+      <!-- content.css lays out these two articles. The words stay in HTML. -->
+      <div class="comparison">
+        <article class="card">
+          <h3>An account of a place</h3>
+          <p>I like to stop here after class because there is shade in the afternoon and I can meet a friend. When it rains, I go somewhere else.</p>
+        </article>
+        <article class="card">
+          <h3>A simplified record</h3>
+          <!-- CSS matches .record. JavaScript finds this exact #record-output.
+               Leave the ID unchanged until the break-and-repair exercise. -->
+          <p id="record-output" class="record" role="status">JavaScript is not connected yet. Enable Step 4 to activate the button.</p>
+          <!-- disabled is an HTML attribute. scripts/app.js enables this button. -->
+          <button id="record-button" type="button" disabled>Show the two tags</button>
+          <p>Two tags chosen for this example represent the whole account. What do they retain, and what do they leave out?</p>
+          <p class="note">This button only changes the page. It does not save or submit a response.</p>
+        </article>
+      </div>
+
+      <h3>What does the record leave out?</h3>
+      <p>The tags retain one environmental feature and a broad time of day. This can help us compare records, but it does not explain why the narrator returns or how their experience changes. Which social, sensory and practical details disappear? Would someone else experience this place in the same way?</p>
+      <p>In your future PPGIS project, the questions and categories you choose will shape what can become data. A useful simplification needs an explanation of its limits.</p>
+    </section>
+
+    <!-- Keep this section in the HTML even if you stop after the core exercise. -->
+    <section id="map-section">
+      <h2>An first map</h2>
+      <p>Putting a record on a map adds a location, but does not restore everything left out of the original account. The marker in this extension is an invented example near central Graz, not a measured patch of shade.</p>
+      <!-- Leaflet will fill this div. styles/map.css supplies its height. -->
+      <div id="map" aria-label="Map of an invented example point near central Graz"></div>
+      <p id="map-status" role="status">The map is not started. Enable at Step 5 only.</p>
+      <button id="return-map" type="button" disabled>Return to the example point</button>
+    </section>
+  </main>
+  <footer>
+    <p>Further reading: <a href="https://ojs.library.queensu.ca/index.php/surveillance-and-society/article/view/datafication">José van Dijck on datafication, 2014</a>. </p>
+  </footer>
+</body>
+</html>

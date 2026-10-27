@@ -1,0 +1,49 @@
+<!doctype html>
+<!-- lang tells assistive technology the language of the page. -->
+<html lang="en">
+<head>
+  <!-- UTF-8 supports accents. The viewport lets the layout adapt to phone screens. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Two stops, one geographic question</title>
+  <!-- Load Leaflet's own appearance and API from a fixed version on a CDN. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <!-- Relative paths load our files beside this HTML file. Custom CSS follows Leaflet CSS. -->
+  <link rel="stylesheet" href="style.css">
+  <!-- defer waits for HTML parsing; deferred classic scripts run in document order. -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><h1>Two stops, one geographic question</h1></header>
+  <!-- Semantic elements describe content, while classes/IDs connect it to CSS and JS. -->
+  <main>
+    <p>How might public space support a short break during a walk? These example stops suggest observations to make, not findings.</p>
+    <!-- The two child boxes become grid columns on wide screens and stack on phones. -->
+    <div class="layout">
+      <div>
+        <section>
+          <h2>1. A central square</h2>
+          <p>Near Hauptplatz, look for places to sit and routes through the square. Who can stop without blocking others?</p>
+          <!-- This ID must match buttonId in the JavaScript stops array. -->
+          <button id="square" type="button">Show the square on the map</button>
+        </section>
+        <section>
+          <h2>2. A park setting</h2>
+          <p>Near Stadtpark, compare shade and seating. Visit at the same time of day before drawing conclusions about comfort.</p>
+          <!-- This ID must match buttonId in the JavaScript stops array. -->
+          <button id="park" type="button">Show the park on the map</button>
+        </section>
+        <p>Source note: approximate locations chosen for teaching. No field observations have been collected.</p>
+      </div>
+      <div>
+    <!-- Leaflet fills this container. Its height comes from #map in style.css. -->
+    <div id="map" aria-label="Interactive map"></div>
+        <!-- role="status" announces changing feedback without moving keyboard focus. -->
+    <p id="status" role="status">Choose a stop to focus the map.</p>
+      </div>
+    </div>
+  </main>
+  <footer><p>Teaching example for Graz 402.407. Adapt the question and content for your project.</p></footer>
+</body>
+</html>

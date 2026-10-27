@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Reading a place</title>
+  <!-- This example teaches HTML and CSS only. No JavaScript is required. -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><h1>Reading a place</h1></header>
+  <!-- Real fragment links connect navigation labels with the section IDs below. -->
+  <nav aria-label="Page sections">
+    <a href="#question">Question</a>
+    <a href="#observations">Observations</a>
+    <a href="#limits">Limits</a>
+  </nav>
+  <main class="layout">
+    <div>
+      <section id="question"><h2>Who can take a break here?</h2><p>A field note can ask how seating, shade, and paths affect the use of a public place.</p></section>
+      <section id="observations"><h2>What would you observe?</h2><ul><li>Where can someone sit without buying anything?</li><li>Which routes are accessible without steps?</li></ul></section>
+    </div>
+    <!-- An aside contains related context rather than the next step in the account. -->
+    <aside id="limits"><h2>Limits of this account</h2><p>These are teaching prompts, not collected findings. A single visit cannot represent every user's experience.</p></aside>
+  </main>
+  <footer><p>Adapted from Lab 05. Compare the layout on a phone and a wider screen.</p></footer>
+</body>
+</html>

@@ -1,0 +1,6 @@
+/* STEP 5. An empty div has no useful height until we give the map room. */
+#map {
+  height: 22rem;
+  margin-block: 1rem;
+  border: 1px solid #697a86;
+}

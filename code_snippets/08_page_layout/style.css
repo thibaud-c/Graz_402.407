@@ -1,0 +1,15 @@
+/* Include padding and borders inside declared widths. */
+* { box-sizing: border-box; }
+body { margin: auto; max-width: 65rem; padding: 1rem; font-family: system-ui, sans-serif; line-height: 1.6; color: #172a35; }
+header, footer { padding: 1rem; background: #e0f2e9; }
+/* Flexbox handles one row of links. Wrapping keeps them usable on a narrow screen. */
+nav { display: flex; flex-wrap: wrap; gap: 1rem; padding-block: 1rem; }
+a { color: #005a8d; }
+/* Keep a visible indicator for keyboard navigation. */
+:focus-visible { outline: 3px solid #8a3500; outline-offset: 3px; }
+/* Grid handles the relationship between main text and contextual information. */
+.layout { display: grid; gap: 1.5rem; }
+aside { padding: 1rem; border: 2px solid #176b58; }
+@media (min-width: 48rem) {
+  .layout { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+}

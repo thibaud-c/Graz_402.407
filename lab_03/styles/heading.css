@@ -1,0 +1,38 @@
+/* STEP 2. This file follows default.css. Both h1 selectors have equal specificity. */
+header {
+  background-color: #e6f1ed;
+  border-top: 6px solid #27634d;
+  padding: 1rem;
+}
+h1 { color: #174b39; font-size: 2.4rem; }
+header p { margin-block: 0.4rem; }
+
+/* Three equal grid columns make the list into a menu. gap separates the items. */
+nav ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0.6rem;
+  list-style-type: none;
+  padding: 0;
+}
+nav a {
+  display: block;
+  padding: 0.5rem 0.8rem;
+  background-color: #005a73;
+  color: white;
+  text-align: center;
+  border-radius: 0.3rem;
+}
+nav a:hover, nav a:focus-visible { background-color: #003e50; }
+
+/* A narrow window uses one column so the menu text stays easy to read. */
+@media (max-width: 40rem) {
+  nav ul { grid-template-columns: 1fr; }
+}
+
+footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #697a86;
+  font-size: 0.9rem;
+}
