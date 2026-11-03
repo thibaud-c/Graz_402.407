@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- lang tells assistive technology the language of the page. -->
+<html lang="en">
+<head>
+  <!-- UTF-8 supports accents. The viewport lets the layout adapt to phone screens. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Images and features from OGC services</title>
+  <!-- Load Leaflet's own appearance and API from a fixed version on a CDN. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <!-- Relative paths load our files beside this HTML file. Custom CSS follows Leaflet CSS. -->
+  <link rel="stylesheet" href="style.css">
+  <!-- defer waits for HTML parsing; deferred classic scripts run in document order. -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><h1>Images and features from OGC services</h1></header>
+  <main>
+    <p>Toggle the WMS country boundaries in the map's layer control. Then load a small set of point features from an OGC API.</p>
+    <div id="map" aria-label="Map comparing rendered boundaries and observation features"></div>
+    <!-- Separate feedback: a failed image layer must not look like a failed feature request. -->
+    <p id="wms-status" role="status">WMS boundaries are images; they do not contain clickable feature attributes.</p>
+    <button id="load-observations" type="button">Load five demo observations</button>
+    <p id="status" role="status">No observation features requested yet.</p>
+    <p>Sources: <a href="https://demo.mapserver.org/">MapServer demo</a> country boundaries and
+      <a href="https://demo.pygeoapi.io/master/collections/obs?f=json">pygeoapi demo observations</a>.
+      These observations are sample records, not a current monitoring feed. Public demo services may be unavailable.</p>
+  </main>
+</body>
+</html>

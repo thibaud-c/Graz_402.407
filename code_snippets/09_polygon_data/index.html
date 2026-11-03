@@ -1,0 +1,26 @@
+<!doctype html>
+<!-- lang tells assistive technology the language of the page. -->
+<html lang="en">
+<head>
+  <!-- UTF-8 supports accents. The viewport lets the layout adapt to phone screens. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Graz district polygons</title>
+  <!-- Load Leaflet's own appearance and API from a fixed version on a CDN. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <!-- Relative paths load our files beside this HTML file. Custom CSS follows Leaflet CSS. -->
+  <link rel="stylesheet" href="style.css">
+  <!-- defer waits for HTML parsing; deferred classic scripts run in document order. -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><h1>Graz district polygons</h1></header>
+  <main>
+    <p>This dated OpenStreetMap export contains polygon boundaries and point features. Only polygons are drawn here; point records are not additional districts.</p>
+    <p>Source: <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors, ODbL</a>. Export timestamp: 17 November 2025. This is not a verified current administrative dataset.</p>
+    <div id="map" aria-label="District polygon map"></div>
+    <p id="status" role="status">Loading district data...</p>
+  </main>
+</body>
+</html>

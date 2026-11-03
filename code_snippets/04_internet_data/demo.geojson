@@ -1,0 +1,19 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "place": "Invented teaching event, not a real earthquake",
+        "mag": 2.5
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.44,
+          47.07
+        ]
+      }
+    }
+  ]
+}
