@@ -52,6 +52,14 @@ A basemap provides context. It does not supply your research observations. Give 
 
 Reference: [Leaflet quick start](https://leafletjs.com/examples/quick-start/) and [API reference](https://leafletjs.com/reference.html).
 
+## Documentation and video to keep nearby
+
+| Resource | Content |
+| --- | --- |
+| [Leaflet JS Tutorial 101; MapTiler](https://www.youtube.com/playlist?list=PLGHe6Moaz52PUNP4DtIshALDogSURIlYB) | Fundamental concepts for leaflet.js. |
+| [Leaflet 1.9 tutorials](https://leafletjs.com/examples-v1.html) | List of simple leaflet examples, version 1.x (recommended for this course). |
+
+
 ## Exercise: two places, one question
 
 Add two markers relevant to one geographic question. Give each a popup explaining its relevance. Change the initial view so both are visible. Click elsewhere and read the coordinates shown below the map.

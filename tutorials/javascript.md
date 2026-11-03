@@ -157,6 +157,14 @@ Interactive maps decide what happens when someone clicks, searches, or submits a
 
 Use [Elwood, Goodchild and Sui's discussion of volunteered geographic information](https://doi.org/10.1080/00045608.2011.595657) to ask who produces the records your interface displays. Before adding a filter or a required field, explain whose contributions it might exclude and how you would communicate that limitation.
 
+## Documentation and video to keep nearby
+
+| Resource | Content |
+| --- | --- |
+| [w3 school's JS Tutorial](https://www.w3schools.com/js/default.asp) | Reference for JS concepts and syntax. There is also small quizzes that can help you to practice. |
+| [JavaScript: Adding interactivity](https://developer.mozilla.org/en-US/docs/Learn_web_development/Getting_started/Your_first_website/Adding_interactivity) | In-depth articles that explain the basics of JS. |
+| [JavaScript Course for Beginners; Programming with Mosh](https://www.youtube.com/watch?v=W6NZfCO5SIk) | Fundamental concepts of web development with JS. |
+
 ## Exercise: add a reset action
 
 In your copied starter add a second button. Give it a unique ID. Make its click handler reset both the variable and visible count to zero. Click the count button three times, reset, then click once more.

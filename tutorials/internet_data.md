@@ -90,12 +90,3 @@ A continuing stream is different again. Server-sent events use `EventSource` wit
 
 References: [MDN Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch), [readable streams](https://developer.mozilla.org/en-US/docs/Web/API/Streams_API/Using_readable_streams), [server-sent events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events/Using_server-sent_events).
 
-## Exercise: inspect, fail, and recover
-
-1. Load the live feed and record the retrieval time and feature count.
-2. Switch to the demo file and explain why its result differs.
-3. Temporarily change the demo URL in `app.js` to a nonexistent filename. Reload and request demo data. Find the 404 in Network and the visible failure message.
-4. Restore the filename, reload, and confirm recovery.
-5. Run `inspectStream()` and record its final byte count. Explain why it is not a feature count.
-
-You are done when you can distinguish a failed request, a successful empty collection, polling, and a streamed response. Never describe an empty response as proof that nothing happened in the world.

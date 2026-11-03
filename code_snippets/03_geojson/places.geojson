@@ -1,0 +1,47 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Example stop A",
+        "category": "rest"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.4395,
+          47.0707
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Example stop B",
+        "category": "shade"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.442,
+          47.076
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Example stop C",
+        "category": "rest"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.45,
+          47.073
+        ]
+      }
+    }
+  ]
+}
