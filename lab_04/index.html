@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Situated knowledge: whose account is on the map?</title>
+  <!-- Keep Leaflet before our script. defer waits for the HTML to be parsed. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <p>Lab 04 · JavaScript + Leaflet + GeoJSON</p>
+    <h1>Situated knowledge</h1>
+    <p>Whose account is on the map?</p>
+  </header>
+  <!-- Reuse the simple grid menu from Lab 03. -->
+  <nav aria-label="On this page">
+    <ul>
+      <li><a href="#concept">The concept</a></li>
+      <li><a href="#map-section">Map and observations</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="concept">
+      <h2>Knowing a place from somewhere</h2>
+      <p><strong>Situated knowledge</strong> asks us to recognise the position and conditions from which knowledge is produced. What we know about a place is shaped partly by our activities, experiences and relationships. Someone meeting a friend, carrying shopping or working nearby may notice different things about the same square.</p>
+      <p>In digital geographies, this means asking who made a map's records, when and for what purpose. Keeping that context visible helps us assess the claims. It does not mean that every account is equally reliable or that evidence no longer matters.</p>
+      <p class="note"><small>All three accounts below are invented. Their points illustrate different viewpoints around central Graz. They are not survey results, precise observation sites or evidence about actual conditions.</small></p>
+    </section>
+
+    <section id="map-section">
+      <h2>Load three viewpoints</h2>
+      <p>The basemap can appear before our observations. Predict what the button will load, then check the browser's Network panel.</p>
+      <!-- Our script finds these IDs and connects the button to loadPlaces. -->
+      <button id="load-data" type="button" disabled>Load observations</button>
+      <p id="status" role="status">No observations loaded yet. Open with Live Server, then use the button.</p>
+      <!-- The map needs an explicit height in styles/style.css. -->
+      <div id="map" aria-label="Map of three fictional viewpoints around central Graz"></div>
+      <p id="basemap-status" class="note" role="status"><small>Basemap: OpenStreetMap.</small></p>
+
+      <h3>Read the same observations as text</h3>
+      <p>Open a marker's popup, or use this list. Both use the same JavaScript function to describe a feature.</p>
+      <ul id="observations"><li>The observations will appear here after loading.</li></ul>
+      <p>Find the file in VS Code at <code>data/places.geojson</code>. Compare its <code>geometry</code> with its <code>properties</code>.</p>
+    </section>
+
+  </main>
+  <footer>
+    <p>Concept background: <a href="https://commons.princeton.edu/hum583-f21/wp-content/uploads/sites/283/2021/08/Haraway-Situated-Knowledges.pdf">Donna Haraway, Situated Knowledges, 1988</a>.</p>
+    <p>Mapping library: <a href="https://leafletjs.com/">Leaflet</a>. Basemap © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>. Observation data: invented for this lab.</p>
+  </footer>
+</body>
+</html>

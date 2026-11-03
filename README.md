@@ -71,6 +71,9 @@ If Git reports a conflict, follow the [conflict walkthrough](tutorials/git.md#5-
 - [Lab 01](lab_01/README.md): inspect websites together, then read and edit a small HTML page, try tags, and load a local image.
 - [Lab 02](lab_02/README.md): use CSS to change emphasis, colour, spacing, image cropping, and a responsive side panel while discussing uneven digital geographies.
 - [Lab 03](lab_03/README.md): predict and enable styles one at a time, connect a first JavaScript button, and optionally add a Leaflet map while discussing datafication.
+- [Lab 04](lab_04/README.md): load a small GeoJSON file into Leaflet, practise functions and properties, and discuss situated knowledge through different accounts of a place.
+- [Lab 05](lab_05/README.md): inspect API responses, compare Graz GeoJSON, WMS images and GeoTIFF values in Leaflet, and discuss interoperability and control over access to geodata.
+- [Geodata over the web lecture](theory/geodata_over_web_lecture.md): eight slides with a 15-minute outline, slide text, speaker notes and sources.
 - [GIS 101](tutorials/gis_101.md): spatial data, vector and raster, basic analysis, QGIS and ArcGIS tools, and coordinate systems, with a QGIS practice exercise.
 - [Tutorials](tutorials/README.md): a suggested order, short reference tables, guided examples, and a small exercise at the end of each guide.
 - [Code snippets](code_snippets/README.md): standalone starting points for class exercises and projects. Copy a whole example folder before editing it.

@@ -1,0 +1,44 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Square: viewpoint A",
+        "perspective": "A person meeting a friend",
+        "time": "Weekday afternoon",
+        "observation": "This is a familiar meeting place. I can wait here and watch people, although the traffic makes conversation difficult."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [15.4346, 47.0708]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Square: viewpoint B",
+        "perspective": "A person passing through with shopping",
+        "time": "Market morning",
+        "observation": "I want a clear route across the square. When the space is crowded, carrying bags through it feels tiring."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [15.4378, 47.0716]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "Square: viewpoint C",
+        "perspective": "A person working nearby",
+        "time": "Early evening",
+        "observation": "I recognise the delivery routines and closing times here. The place feels different once the daytime visitors have left."
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [15.4385, 47.0711]
+      }
+    }
+  ]
+}
