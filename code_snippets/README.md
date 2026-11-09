@@ -16,6 +16,7 @@ Each numbered folder is independent. Copy the whole folder into `practice`, rena
 | [08_page_layout](08_page_layout/) | Semantic HTML, flex navigation, responsive grid | Resize and add a section | [CSS](../tutorials/css.md) |
 | [09_polygon_data](09_polygon_data/) | Filter a mixed GeoJSON export to district polygons | Inspect excluded point features | [Geodata](../tutorials/geodata.md) |
 | [10_ogc_services](10_ogc_services/) | WMS images and a page of OGC API point features | Compare Network responses | [OGC services](../tutorials/ogc_webservices.md) |
+| [12_pokemon_api](12_pokemon_api/) | A simple PokéAPI request and a loop through types | Request another Pokémon and inspect the JSON | [API exercise](12_pokemon_api/README.md) |
 
 The HTML, CSS, and JavaScript files contain teaching comments explaining the data flow and browser behaviour. GeoJSON is plain data and does not allow comments; read its `properties` and `geometry` fields alongside the [geodata guide](../tutorials/geodata.md).
 

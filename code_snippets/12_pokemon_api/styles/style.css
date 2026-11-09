@@ -1,0 +1,22 @@
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #243746;
+  background: #f4f6f8;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+header { padding: 16px; background: #e6f1ed; border-top: 6px solid #27634d; }
+h1 { color: #174b39; font-size: 32px; line-height: 1.2; }
+h2 { font-size: 24px; }
+a { color: #005a73; }
+label { display: block; }
+input, button { font: inherit; padding: 8px; max-width: 100%; }
+button { cursor: pointer; }
+button:disabled { cursor: default; }
+:focus-visible { outline: 3px solid #8a3500; outline-offset: 3px; }
+pre { white-space: pre-wrap; overflow-wrap: anywhere; background: white; padding: 16px; }
+footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #697a86; font-size: 14px; }

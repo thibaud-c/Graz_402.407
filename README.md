@@ -72,7 +72,8 @@ If Git reports a conflict, follow the [conflict walkthrough](tutorials/git.md#5-
 - [Lab 02](lab_02/README.md): use CSS to change emphasis, colour, spacing, image cropping, and a responsive side panel while discussing uneven digital geographies.
 - [Lab 03](lab_03/README.md): predict and enable styles one at a time, connect a first JavaScript button, and optionally add a Leaflet map while discussing datafication.
 - [Lab 04](lab_04/README.md): load a small GeoJSON file into Leaflet, practise functions and properties, and discuss situated knowledge through different accounts of a place.
-- [Lab 05](lab_05/README.md): inspect API responses, compare Graz GeoJSON, WMS images and GeoTIFF values in Leaflet, and discuss interoperability and control over access to geodata.
+- [Lab 05](lab_05/README.md): compare Graz GeoJSON, WMS images and GeoTIFF values in three separate JavaScript files, and discuss interoperability and control over access to geodata.
+- [PokéAPI exercise](code_snippets/12_pokemon_api/README.md): a separate example for requests, HTTP status, JSON properties, units and loops.
 - [Geodata over the web lecture](theory/geodata_over_web_lecture.md): eight slides with a 15-minute outline, slide text, speaker notes and sources.
 - [GIS 101](tutorials/gis_101.md): spatial data, vector and raster, basic analysis, QGIS and ArcGIS tools, and coordinate systems, with a QGIS practice exercise.
 - [Tutorials](tutorials/README.md): a suggested order, short reference tables, guided examples, and a small exercise at the end of each guide.
@@ -115,6 +116,7 @@ Use these alongside the tutorials. Start with one beginner resource and try its 
 | [Introduction to Web Mapping](https://bgu-geography.com/web-mapping/) | University teaching material; beginner to intermediate | Explore how web maps work and how HTML, JavaScript, geographic data, and mapping libraries fit together. |
 | [GeoJSON specification, RFC 7946](https://www.rfc-editor.org/rfc/rfc7946) | Technical standard; reference | Check what a Feature, FeatureCollection, or coordinate array means. Read the examples before the formal rules. |
 | [USGS earthquake feed documentation](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) | Data-service documentation; intermediate | Read a real GeoJSON schema and compare it with the internet-data snippet. |
+| [GEOG 585: Open Web Mapping](https://courses.ems.psu.edu/geog585/node/2) | Penn University course material; beginner to intermediate | Learn how to build interactive web maps with Leaflet and integrate geospatial data. |
 
 - [OGC web services tutorial](tutorials/ogc_webservices.md): discover standard map and feature services, with links to the official standards.
 

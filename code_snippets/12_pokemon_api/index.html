@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PokéAPI: a first API request</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/pokemon.js" defer></script>
+</head>
+<body>
+  <header>
+    <p>Code example · PokéAPI</p>
+    <h1>A first API request</h1>
+    <p>A URL asks for a record. JavaScript checks the response and reads its fields.</p>
+  </header>
+  <main>
+    <p><a href="README.md">The API exercise questions</a></p>
+    <form id="pokemon-form">
+      <label for="pokemon-name">Pokémon name or ID</label>
+      <input id="pokemon-name" name="pokemon" value="pikachu" required maxlength="60" aria-describedby="name-hint">
+      <button id="request-pokemon" type="submit">Request Pokémon</button>
+      <p id="name-hint">Try pikachu, bulbasaur or ditto. Use letters, numbers and hyphens. Predict the response before requesting.</p>
+    </form>
+    <p id="api-status" role="status">No request made yet.</p>
+    <h2>The last successful response</h2>
+    <p id="pokemon-summary">Request a record to see its fields.</p>
+    <ul id="pokemon-types" aria-label="Types in the returned record"></ul>
+    <p>The API documents height in decimetres and weight in hectograms. Check the units before interpreting the numbers.</p>
+    <details>
+      <summary>Inspect the complete JSON response</summary>
+      <pre id="response-json">No JSON loaded yet.</pre>
+    </details>
+    <p>Read <a href="https://pokeapi.co/docs/v2#pokemon">PokéAPI's field documentation</a>. This is JSON, but it contains no GeoJSON geometry locating the Pokémon in Graz.</p>
+  </main>
+  <footer><p>Source: <a href="https://pokeapi.co/">PokéAPI</a>. Requests run only when you submit the form. Make a few deliberate requests; there is no automatic polling.</p></footer>
+</body>
+</html>
