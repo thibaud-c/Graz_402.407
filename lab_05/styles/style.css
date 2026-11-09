@@ -1,0 +1,53 @@
+/* Sizes use px or %. Grid columns plus their gaps add up to 100%. */
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #243746;
+  background: #f4f6f8;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 16px;
+}
+h1, h2, h3 { line-height: 1.2; }
+h1 { color: #174b39; font-size: 35px; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+header { background: #e6f1ed; border-top: 6px solid #27634d; padding: 16px; }
+a { color: #005a73; }
+nav ul {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  column-gap: 2%;
+  row-gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+nav a { display: block; background: #005a73; color: white; padding: 8px; text-align: center; }
+.map-grid {
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  column-gap: 2%;
+  row-gap: 20px;
+}
+.map-grid > section { min-width: 0; }
+.map { height: 370px; border: 1px solid #697a86; }
+button { font: inherit; padding: 8px; max-width: 100%; cursor: pointer; }
+button:disabled { cursor: default; }
+:focus-visible { outline: 3px solid #8a3500; outline-offset: 3px; }
+.status { min-height: 77px; font-weight: 600; }
+.note, footer { font-size: 14px; }
+.legend { list-style: none; padding: 0; }
+.swatch { display: inline-block; width: 16px; height: 16px; border: 1px solid #243746; }
+.low { background: #c6e8c3; }
+.middle { background: #74a9cf; }
+.high { background: #7a5195; }
+footer { margin-top: 32px; padding-top: 16px; border-top: 1px solid #697a86; }
+@media (max-width: 960px) {
+  .map-grid { grid-template-columns: 100%; }
+  .status { min-height: 26px; }
+}
+@media (max-width: 640px) {
+  nav ul { grid-template-columns: 100%; }
+}

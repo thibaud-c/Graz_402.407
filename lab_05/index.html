@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 05: geodata over the web</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- Libraries are reusable JavaScript code. defer runs these files in this order. -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <!-- One independent script for each kind of data. -->
+  <script src="scripts/geojson.js" defer></script>
+  <script src="scripts/wms.js" defer></script>
+  <!-- GeoRaster reads TIFF bytes. GeoRasterLayer draws the decoded raster in Leaflet. -->
+  <script src="https://unpkg.com/georaster@1.6.0/dist/georaster.browser.bundle.min.js" defer></script>
+  <script src="https://unpkg.com/georaster-layer-for-leaflet@3.10.0/dist/georaster-layer-for-leaflet.min.js" defer></script>
+  <script src="scripts/raster.js" defer></script>
+</head>
+<body>
+  <header>
+    <p>Lab 05 · JavaScript + Leaflet + web data</p>
+    <h1>Geodata over the web</h1>
+  </header>
+  <nav aria-label="On this page">
+    <ul>
+      <li><a href="#concept">The concept</a></li>
+      <li><a href="#maps">Compare the maps</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="concept">
+      <h2>Interoperability and control over access</h2>
+      <p><strong>Interoperability</strong> means that different systems can exchange and use information. Files, standards, services and the organisations maintaining them form a <strong>geodata infrastructure</strong>. They let our page combine city records, regional imagery and a surface-height dataset.</p>
+      <p>Providers still choose what to publish, how to describe it and which operations to allow. A downloadable feature can be inspected and restyled. A WMS supplies the provider's rendered picture. A common format does not guarantee complete coverage, recent observations or agreement about what a place means.</p>
+      <p class="note">Our geographical question: who controls what we can download, inspect, change or only view? Connect this to the podcast's discussion of opinionated data.</p>
+    </section>
+
+    <section id="maps">
+      <h2>Load one source at a time</h2>
+      <p>All three maps start at the same Graz centre and zoom. They move independently. Their OpenStreetMap backgrounds already request <strong>XYZ image tiles</strong>. The buttons add a different kind of data on top.</p>
+      <div class="map-grid">
+        <section aria-labelledby="geojson-title">
+          <h3 id="geojson-title">1. Downloaded GeoJSON</h3>
+          <p>Graz's public fountain records, saved from the city's online feature query on 2 November 2026. This is a snapshot, not a live feed.</p>
+          <button id="load-geojson" type="button">Load GeoJSON</button>
+          <p id="geojson-status" class="status" role="status">No fountain records loaded yet.</p>
+          <div id="map-geojson" class="map" aria-label="Graz fountain records from downloaded GeoJSON"></div>
+          <p id="map-geojson-tiles" class="note" role="status">Background: OpenStreetMap XYZ tiles.</p>
+          <p>Inspectable geometry and properties. JavaScript chooses our markers and popup text.</p>
+          <details>
+            <summary>Read the fountain records as text</summary>
+            <ul id="fountain-list"><li>Load the GeoJSON first.</li></ul>
+          </details>
+        </section>
+
+        <section aria-labelledby="wms-title">
+          <h3 id="wms-title">2. Live WMS requests</h3>
+          <p>Styrian orthophotos from the 2022–2024 flight period. Each request asks the remote server to render an image.</p>
+          <button id="load-wms" type="button">Load WMS</button>
+          <p id="wms-status" class="status" role="status">No orthophoto images requested yet.</p>
+          <div id="map-wms" class="map" aria-label="Styrian orthophoto WMS around Graz"></div>
+          <p id="map-wms-tiles" class="note" role="status">Background: OpenStreetMap XYZ tiles.</p>
+          <p>The response is a picture. It contains no fountain array for our JavaScript loop. A live service can deliver older observations.</p>
+          <p class="note">Source: <a href="https://www.landesentwicklung.steiermark.at/cms/beitrag/12866797/142970647/">GIS-Steiermark orthophoto services</a>. Flight-period label, not a single acquisition date for every pixel.</p>
+        </section>
+
+        <section aria-labelledby="raster-title">
+          <h3 id="raster-title">3. Small GeoTIFF</h3>
+          <p>A Graz crop from Copernicus GLO-30. The file stores numeric surface heights, including effects of buildings and vegetation.</p>
+          <button id="load-raster" type="button">Load GeoTIFF</button>
+          <p id="raster-status" class="status" role="status">No raster values loaded yet.</p>
+          <div id="map-raster" class="map" aria-label="Copernicus surface heights around Graz"></div>
+          <p id="map-raster-tiles" class="note" role="status">Background: OpenStreetMap XYZ tiles.</p>
+          <ul class="legend" aria-label="Surface height colour legend">
+            <li><span class="swatch low"></span> Below 350 m</li>
+            <li><span class="swatch middle"></span> 350 m to below 500 m</li>
+            <li><span class="swatch high"></span> 500 m or higher</li>
+          </ul>
+          <p class="note">This simple example reads the whole small file. It demonstrates GeoTIFF values, not remote COG streaming. Read our code in <code>scripts/raster.js</code>.</p>
+          <p class="note"><strong>Why two raster libraries?</strong> GeoRaster reads the TIFF into values and geographical information. GeoRasterLayer draws those values on our Leaflet map. A library is reusable JavaScript code, loaded with a <code>&lt;script&gt;</code> tag. Both work with ordinary browser JavaScript.</p>
+        </section>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <p>GeoJSON: Datenquelle: Stadt Graz – data.graz.gv.at, CC BY 4.0. WMS: Datenquelle: CC-BY-4.0: Land Steiermark - data.steiermark.gv.at. Backgrounds: © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.</p>
+    <p>Raster crop produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved.</p>
+    <p><a href="data/README.md">Data sources, dates, licences and crop details</a>. <a href="https://leafletjs.com/">Leaflet</a> draws the maps; the supplied raster helpers decode the GeoTIFF.</p>
+  </footer>
+</body>
+</html>
