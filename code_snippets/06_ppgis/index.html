@@ -1,0 +1,52 @@
+<!doctype html>
+<!-- lang tells assistive technology the language of the page. -->
+<html lang="en">
+<head>
+  <!-- UTF-8 supports accents. The viewport lets the layout adapt to phone screens. -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PPGIS practice: public places for a break</title>
+  <!-- Load Leaflet's own appearance and API from a fixed version on a CDN. -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <!-- Relative paths load our files beside this HTML file. Custom CSS follows Leaflet CSS. -->
+  <link rel="stylesheet" href="style.css">
+  <!-- defer waits for HTML parsing; deferred classic scripts run in document order. -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header><h1>PPGIS practice: public places for a break</h1></header>
+  <!-- Semantic elements describe content, while classes/IDs connect it to CSS and JS. -->
+  <main>
+    <p>This is a classroom demo. Use invented observations about public places. Do not enter names, home locations, or identifying details. The map uses external OpenStreetMap tiles and Leaflet from a CDN.</p>
+    <p>Responses stay in this page's memory. Download them before closing or reloading. Nothing is submitted to a researcher by this demo. Real collection needs an agreed participant information sheet and private file-transfer procedure.</p>
+    <!-- Leaflet fills this container. Its height comes from #map in style.css. -->
+    <div id="map" aria-label="Interactive map"></div>
+    <!-- Selection feedback is separate from the count of recorded observations. -->
+    <p id="selection-status" role="status">Click a place to show a target and its coordinates. Selection alone does not save it.</p>
+    <!-- for/id pairs connect labels to fields. required/min/max give browser feedback. -->
+    <form id="observation-form">
+      <p>Select a point on the map or type coordinates below.</p>
+      <label for="latitude">Latitude in degrees, from -90 to 90</label>
+      <input id="latitude" type="number" min="-90" max="90" step="any" required>
+      <label for="longitude">Longitude in degrees, from -180 to 180</label>
+      <input id="longitude" type="number" min="-180" max="180" step="any" required>
+      <label for="category">What does this public place need?</label>
+      <select id="category" required>
+        <option value="">Choose one</option><option value="seating">Seating</option><option value="shade">Shade</option><option value="quiet">A quieter setting</option>
+      </select>
+      <label for="comment">Optional comment, up to 200 characters</label>
+      <textarea id="comment" maxlength="200" rows="3"></textarea>
+      <label><input id="consent" type="checkbox" required> I understand this is a demo and will use fictional, non-identifying observations.</label>
+      <button type="submit">Add observation</button>
+    </form>
+    <!-- role="status" announces changing feedback without moving keyboard focus. -->
+    <p id="status" role="status">No observations yet.</p>
+    <h2>Observations in this session</h2>
+    <!-- JavaScript appends list items and Remove buttons as observations are recorded. -->
+    <ul id="observations"></ul>
+    <button id="download" type="button">Download GeoJSON</button>
+  </main>
+  <footer><p>Teaching example for Graz 402.407. Adapt the question and content for your project.</p></footer>
+</body>
+</html>
