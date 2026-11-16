@@ -1,0 +1,71 @@
+/* Keep sizes in px and %. Read this alongside the HTML classes and IDs. */
+* { box-sizing: border-box; }
+body {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #243746;
+  background: #f4f6f8;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px;
+}
+h1, h2, h3 { line-height: 1.2; }
+h1 { font-size: 34px; color: #174b39; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; }
+header { background: #e6f1ed; border-top: 6px solid #27634d; border-radius: 10px; padding: 20px; }
+a { color: #005a73; }
+nav ul {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  gap: 2%;
+  list-style: none;
+  padding: 0;
+}
+nav a { display: block; background: #005a73; color: white; border-radius: 6px; padding: 10px; text-align: center; text-decoration: none; }
+#map { height: 400px; border: 1px solid #b7c8c1; border-radius: 8px; }
+/* Place search and map clicks are two equally visible ways to choose a point. */
+.location-methods { display: grid; grid-template-columns: 36% 62%; column-gap: 2%; align-items: start; }
+#search-section { background: white; border: 1px solid #d8e3df; border-radius: 10px; padding: 16px; }
+.location-methods h3 { margin-top: 0; }
+.location-methods > section { min-width: 0; }
+.search-controls { display: flex; gap: 8px; }
+.search-controls input { flex: 1; min-width: 0; }
+.search-controls button { flex-shrink: 0; }
+#location-status { padding: 12px; background: #e6f1ed; border-left: 4px solid #27634d; border-radius: 6px; }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 16px 0; }
+button, input, select, textarea { font: inherit; }
+/* One shared button style, with outlined secondary actions below. */
+button, .download { display: inline-block; background: #176b57; color: white; border: 1px solid #176b57; border-radius: 8px; padding: 10px 16px; font-weight: 600; text-decoration: none; cursor: pointer; }
+button { max-width: 100%; }
+button:hover { background: #10503f; }
+.download, #cancel-form, #search-results button { background: white; color: #176b57; }
+.download:hover, #cancel-form:hover, #search-results button:hover { background: #e6f1ed; }
+button:disabled { opacity: 0.6; cursor: wait; }
+label { display: block; margin: 14px 0 6px; font-weight: 600; }
+input, select, textarea { width: 100%; padding: 10px; color: #243746; background: white; border: 1px solid #7e9388; border-radius: 6px; }
+input:focus, select:focus, textarea:focus { border-color: #176b57; }
+textarea { resize: vertical; }
+.note, footer { font-size: 14px; }
+[role="status"] { font-weight: 600; }
+#search-results { list-style: none; padding: 6px; max-height: 240px; overflow-y: auto; }
+#search-results button { width: 100%; text-align: left; margin: 4px 0; overflow-wrap: anywhere; }
+#ideas li { margin-bottom: 8px; overflow-wrap: anywhere; }
+:focus-visible { outline: 3px solid #8a3500; outline-offset: 3px; }
+/* The browser supplies modal behaviour, Escape, and focus handling. */
+dialog { width: 90%; max-width: 560px; max-height: 90%; padding: 24px; background: white; border: 1px solid #b7c8c1; border-radius: 14px; box-shadow: 0 12px 40px #00000026; overflow-y: auto; }
+dialog::backdrop { background: #152f3d80; }
+dialog h2 { margin-top: 0; }
+.coordinates { display: grid; grid-template-columns: 49% 49%; column-gap: 2%; }
+footer { margin-top: 32px; border-top: 1px solid #697a86; padding-top: 16px; }
+@media (max-width: 700px) {
+  h1 { font-size: 28px; }
+  nav ul { grid-template-columns: 100%; row-gap: 10px; }
+  .coordinates { grid-template-columns: 100%; }
+  .location-methods { grid-template-columns: 100%; row-gap: 20px; }
+  dialog { padding: 18px; line-height: 1.5; }
+  dialog label { margin-top: 10px; }
+  dialog .actions { display: grid; grid-template-columns: 65% 33%; column-gap: 2%; }
+  #map { height: 340px; }
+}

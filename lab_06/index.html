@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 06: who sets the mapping agenda?</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- defer runs these in order after the HTML is ready. Leaflet supplies L. -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="scripts/map.js" defer></script>
+  <script src="scripts/form.js" defer></script>
+  <script src="scripts/download.js" defer></script>
+  <!-- The geocoding library loads before our place-search script. -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet-control-geocoder@3.3.1/dist/Control.Geocoder.js" defer></script>
+  <script src="scripts/geocoding.js" defer></script>
+</head>
+<body>
+  <header>
+    <p>Lab 06 · HTML forms + JavaScript + Leaflet</p>
+    <h1>Who sets the mapping agenda?</h1>
+    <p>Where could a small change make a public place in Graz more welcoming?</p>
+  </header>
+  <nav aria-label="On this page">
+    <ul>
+      <li><a href="#concept">The concept</a></li>
+      <li><a href="#map-section">The experiment</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="concept">
+      <h2>Invited participation</h2>
+      <p>A city invites residents to suggest improvements on a map. Someone has already chosen the question, the answer categories and the area shown. These choices set an <strong>agenda</strong>: which issues people are invited to discuss. A form can make some suggestions easy to express and leave others difficult to describe.</p>
+      <p>Participation can also include helping to choose the questions, interpret the answers and decide what happens next. In this exercise you can submit an idea, but there is no planner receiving it. Think about what would need to happen for a suggestion to influence a decision.</p>
+      <p><strong>Compare:</strong> this form asks about small physical changes. Where would someone express a wish for cheaper housing, less policing, or a place to meet after dark? Try the form, then change one choice.</p>
+    </section>
+    <section id="map-section">
+      <h2>A form becomes a map record</h2>
+      <p>Use <strong>invented classroom examples</strong>. Choose a public place, without personal names, home addresses or sensitive experiences.</p>
+      <h3>Two ways to choose a location</h3>
+      <p><strong>Map literacy</strong> means making sense of a map through its symbols, scale and landmarks. Clicking asks you to connect a place you know with its position on the map. Searching starts with a place name, but you still need to check whether the result matches the place you mean.</p>
+      <p>Try both methods. Each selects an orange circle on the map; you can click to adjust a search result.</p>
+      <div class="location-methods">
+        <section id="search-section">
+          <h3>Search by name</h3>
+          <p><strong>Geocoding</strong> finds candidate coordinates for a place name. Try <code>Hauptplatz Graz</code>, then choose a result.</p>
+          <!-- A separate form. Enter and the button both start the search. -->
+          <form id="search-form">
+            <label for="place-name">Public place name</label>
+            <div class="search-controls">
+              <input id="place-name" type="text" required maxlength="80" placeholder="Hauptplatz Graz">
+              <button id="search-button" type="submit">Find place</button>
+            </div>
+          </form>
+          <p id="search-status" role="status">Search, then select a result. Check its position on the map.</p>
+          <ul id="search-results"></ul>
+          <p class="note">Only your search name is sent to <a href="https://github.com/komoot/photon#demo-server">Photon</a>. Use occasional searches for public places. Your idea and comment stay in this tab.</p>
+        </section>
+        <section class="map-method">
+          <h3>Click on the map</h3>
+          <p>Zoom and use streets or landmarks to find your place. Click to select it or adjust the point found by search.</p>
+          <div id="map" aria-label="Graz map for selecting a public place"></div>
+        </section>
+      </div>
+      <p id="location-status" role="status">No location selected. Search by name or click the map.</p>
+      <p>When the point is where you want it, press <strong>Add an idea</strong>. You can also enter coordinates in the form with the keyboard.</p>
+      <div class="actions">
+        <button id="open-form" type="button">Add an idea</button>
+        <a id="download" class="download" href="#" download="graz-ideas.geojson">Download GeoJSON</a>
+      </div>
+      <p id="record-status" role="status">0 ideas in this browser tab. Refreshing clears them. Download before leaving.</p>
+      <h3>Ideas in this tab</h3>
+      <ol id="ideas"></ol>
+    </section>
+  </main>
+
+  <!-- dialog is a native HTML element. showModal() opens it above the page. -->
+  <dialog id="idea-dialog" aria-labelledby="dialog-title">
+    <h2 id="dialog-title">Add an invented idea</h2>
+    <p id="form-help">Check the coordinates. You can edit them or cancel and choose another place.</p>
+    <form id="idea-form" aria-describedby="form-help">
+      <div class="coordinates">
+        <div>
+          <label for="latitude">Latitude</label>
+          <input id="latitude" type="number" min="-90" max="90" step="any" required>
+        </div>
+        <div>
+          <label for="longitude">Longitude</label>
+          <input id="longitude" type="number" min="-180" max="180" step="any" required>
+        </div>
+      </div>
+      <label for="idea-type">What would you suggest here?</label>
+      <select id="idea-type" required>
+        <option value="">Choose an idea</option>
+        <option value="A place to sit">A place to sit</option>
+        <option value="Clearer signs">Clearer signs</option>
+        <option value="Step-free access">Step-free access</option>
+        <option value="Something else">Something else</option>
+      </select>
+      <label for="comment">Explain your idea, optional</label>
+      <textarea id="comment" rows="3" maxlength="160" placeholder="For example: an extra bench near the square."></textarea>
+      <p class="note">Maximum 160 characters. Use invented text without personal information.</p>
+      <div class="actions">
+        <button type="submit">Save idea in this tab</button>
+        <!-- type=button prevents Cancel from submitting this form. -->
+        <button id="cancel-form" type="button">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+  <footer>
+    <p>Concept background: <a href="https://doi.org/10.1080/01944366908977225">Sherry Arnstein on participation and power, 1969</a>, and <a href="https://doi.org/10.1111/j.1467-8306.2006.00702.x">Renee Sieber on PPGIS, 2006</a>.</p>
+    <p><a href="README.md">Lab worksheet and code guide</a>. Map library: <a href="https://leafletjs.com/">Leaflet</a>. Basemap and geocoding data © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>.</p>
+  </footer>
+</body>
+</html>
