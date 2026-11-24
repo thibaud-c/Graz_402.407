@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab 07 · Eight suggestions, two maps of Graz</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+  <link rel="stylesheet" href="styles/style.css">
+  <!-- Leaflet supplies L. Chart.js supplies Chart. defer keeps the scripts in order. -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.9/dist/chart.umd.min.js" defer></script>
+  <script src="scripts/count.js" defer></script>
+  <script src="scripts/map.js" defer></script>
+  <script src="scripts/chart.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+</head>
+<body>
+  <header>
+    <p>Lab 07 · JavaScript, Leaflet and Chart.js</p>
+    <h1>Eight suggestions, two maps of Graz</h1>
+    <p>Eight requests for a place to sit. Can you change the pattern without moving a single point?</p>
+  </header>
+  <nav aria-label="On this page">
+    <ul>
+      <li><a href="#experiment">Try the two maps</a></li>
+      <li><a href="#concept">Explain the zoning effect</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="experiment">
+      <h2>Where would you put a bench?</h2>
+      <p>Count the circles on each side of the dashed line. Before switching to north and south, predict which half will have more suggestions.</p>
+      <!-- The two radios share a name, so only one division can be selected. -->
+      <fieldset id="division-picker" disabled>
+        <legend>Divide the study area</legend>
+        <label><input type="radio" name="division" value="eastWest" checked> West / East</label>
+        <label><input type="radio" name="division" value="northSouth"> North / South</label>
+      </fieldset>
+      <div class="results">
+        <section aria-labelledby="map-title">
+          <h3 id="map-title">Suggestions in central Graz</h3>
+          <div id="map" aria-label="Map of invented seating requests in central Graz"></div>
+          <ul class="legend" aria-label="Map legend">
+            <li><span class="dot" aria-hidden="true"></span> One seating request</li>
+            <li><span class="line" aria-hidden="true"></span> Dividing line</li>
+          </ul>
+        </section>
+        <section aria-labelledby="chart-title">
+          <h3 id="chart-title">How many in each half?</h3>
+          <!-- The same values are available as ordinary text below the canvas. -->
+          <div class="chart-box"><canvas id="chart" role="img" aria-labelledby="chart-title" aria-describedby="counts"></canvas></div>
+          <p id="counts" role="status">Loading the seating requests…</p>
+        </section>
+      </div>
+    </section>
+    <section id="concept">
+      <h2>The zoning effect</h2>
+      <p>A web map groups observations according to a rule written by its author. Here, both views use the same study area, the same requests and exactly two zones. Turning the boundary gives each zone a different set of points. Geographers call this the <strong>zoning effect</strong>. It is one part of the modifiable areal unit problem (MAUP).</p>
+      <p><strong>Write a two-sentence caption.</strong> Compare the two splits using the counts you observed. Then name one thing you would need to know before recommending where Graz should install a bench. Think about who was asked, or where benches already exist.</p>
+    </section>
+  </main>
+  <footer>
+    <p>All requests and both boundaries were invented for this exercise. <a href="data/seating.geojson">Inspect the eight GeoJSON features</a>.</p>
+    <p><a href="README.md">Lab worksheet</a> · <a href="https://gistbok-ltb.ucgis.org/current/concept/FC-07-026">UCGIS illustrated guide to scale and zoning</a> · Basemap © <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a></p>
+  </footer>
+</body>
+</html>

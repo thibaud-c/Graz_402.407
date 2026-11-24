@@ -1,0 +1,53 @@
+/* As in Lab 06, the menu and the experiment use a simple two-column grid. */
+* { box-sizing: border-box; }
+body {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px;
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  color: #233933;
+  background: #f6f8f7;
+}
+header {
+  padding: 18px 24px;
+  border-top: 6px solid #27634d;
+  border-radius: 8px;
+  background: #e6f1ed;
+}
+header p { margin: 4px 0; }
+h1, h2, h3 { line-height: 1.2; color: #174b39; }
+h1 { margin: 8px 0; font-size: 34px; }
+h2 { margin-bottom: 8px; font-size: 24px; }
+h3 { margin: 0 0 12px; font-size: 19px; }
+a { color: #005a73; }
+nav ul {
+  display: grid;
+  grid-template-columns: 49% 49%;
+  column-gap: 2%;
+  padding: 0;
+  list-style: none;
+}
+nav a { display: block; padding: 8px; border-radius: 6px; background: #005a73; color: white; text-align: center; }
+fieldset { margin: 16px 0; padding: 6px 14px 10px; border: 1px solid #9aafa4; border-radius: 6px; }
+legend { padding: 0 4px; font-weight: 600; }
+label { display: inline-block; margin-right: 16px; padding: 6px 0; cursor: pointer; }
+input { accent-color: #176b57; }
+:focus-visible { outline: 3px solid #a34106; outline-offset: 3px; }
+.results { display: grid; grid-template-columns: 58% 40%; column-gap: 2%; }
+.results section { min-width: 0; padding: 16px; border: 1px solid #d2ded7; border-radius: 8px; background: white; }
+/* Leaflet needs a map height. Chart.js resizes its canvas inside its own box. */
+#map { height: 330px; border: 1px solid #abbdb1; }
+.chart-box { position: relative; height: 330px; }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; padding: 0; margin-bottom: 0; list-style: none; }
+.dot, .line { display: inline-block; margin-right: 4px; vertical-align: middle; }
+.dot { width: 14px; height: 14px; border: 2px solid #074437; border-radius: 50%; background: #37a884; }
+.line { width: 24px; border-top: 3px dashed #382952; }
+#counts { margin-bottom: 0; font-weight: 600; }
+footer { margin-top: 28px; border-top: 1px solid #abbdb1; font-size: 14px; }
+@media (max-width: 720px) {
+  h1 { font-size: 28px; }
+  nav ul, .results { grid-template-columns: 100%; row-gap: 10px; }
+  .chart-box { height: 235px; }
+}

@@ -74,6 +74,7 @@ If Git reports a conflict, follow the [conflict walkthrough](tutorials/git.md#5-
 - [Lab 04](lab_04/README.md): load a small GeoJSON file into Leaflet, practise functions and properties, and discuss situated knowledge through different accounts of a place.
 - [Lab 05](lab_05/README.md): compare Graz GeoJSON, WMS images and GeoTIFF values in three separate JavaScript files, and discuss interoperability and control over access to geodata.
 - [Lab 06](lab_06/README.md): choose locations by geocoding or map clicks, connect a native HTML form and dialog to Leaflet, create and download invented ideas, and discuss map literacy and who sets a mapping agenda.
+- [Lab 07](lab_07/README.md): draw eight seating suggestions in Graz, count them with a JavaScript loop, and compare two boundaries on a Leaflet map and a Chart.js bar chart to explore the zoning effect.
 - [PokéAPI exercise](code_snippets/12_pokemon_api/README.md): a separate example for requests, HTTP status, JSON properties, units and loops.
 - [Geodata over the web lecture](theory/geodata_over_web_lecture.md): eight slides with a 15-minute outline, slide text, speaker notes and sources.
 - [GIS 101](tutorials/gis_101.md): spatial data, vector and raster, basic analysis, QGIS and ArcGIS tools, and coordinate systems, with a QGIS practice exercise.
